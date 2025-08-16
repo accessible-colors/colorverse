@@ -1,0 +1,18 @@
+[package]
+name = "colorverse"
+version = "0.1.0"
+edition = "2024"
+
+description = "color vision convertor"
+authors = ["nabbisen <nabbisen@scqr.net>"]
+license = "Apache-2.0"
+
+categories = ["graphics", "accessibility", "computer-vision", "rendering", "command-line-utilities"]
+keywords = ["color", "vector", "graphics", "image", "simulation"]
+repository = "https://github.com/nabbisen/colorverse-rs"
+readme = "README.md"
+rust-version = "1.87.0"
+
+[dependencies]
+image = { version = "0", default-features = false, features = ["avif", "gif", "jpeg", "png", "tiff", "webp"] }
+
