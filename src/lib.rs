@@ -1,6 +1,3 @@
-use image::{DynamicImage, GenericImageView, Rgba, RgbaImage};
-use nalgebra::{Matrix3, Vector3};
-
 use crate::core::{
     color_vision::color_vision_type::ColorVisionType,
     image::{converted_image::ConvertedImage, source_image::SourceImage},
