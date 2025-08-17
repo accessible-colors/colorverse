@@ -15,4 +15,5 @@ rust-version = "1.87.0"
 
 [dependencies]
 image = { version = "0", default-features = false, features = ["avif", "gif", "jpeg", "png", "tiff", "webp"] }
+nalgebra = { version = "0", default-features = false }
 

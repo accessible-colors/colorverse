@@ -1,6 +1,6 @@
-use image::{ColorType, RgbImage, RgbaImage};
+use image::ColorType;
 
-use crate::core::color::{color_vision::ColorVision, convert_image_color};
+use crate::core::color_vision::{color_vision_type::ColorVisionType, simulate_color_vision};
 
 use super::converted_image::ConvertedImage;
 
@@ -17,7 +17,11 @@ impl SourceImage {
     }
 
     /// convert
-    pub fn convert(&self, color_vision: &ColorVision) -> Result<ConvertedImage, String> {
+    pub fn convert(
+        &self,
+        color_vision_type: &ColorVisionType,
+        level: f64,
+    ) -> Result<ConvertedImage, String> {
         // todo: debug log
         println!("load image: {}", self.file_path);
 
@@ -36,28 +40,10 @@ impl SourceImage {
             ColorType::Rgb8
         };
 
-        // basis vector
-        let color_basis = color_vision.vec3();
-
-        // convert image and get it as vec
-        let converted_image_data = if color_type == ColorType::Rgba8 {
-            // todo: debug log
-            println!("image has an alpha channel for the transparency information to be preserved");
-
-            let mut img: RgbaImage = dynamic_image.to_rgba8();
-            convert_image_color(&mut img, &color_basis);
-            img.into_vec()
-        } else {
-            // todo: debug log
-            println!("image doesn't have an alpha channel so will be processed as RGB");
-
-            let mut img: RgbImage = dynamic_image.to_rgb8();
-            convert_image_color(&mut img, &color_basis);
-            img.into_vec()
-        };
+        let converted_image = simulate_color_vision(&dynamic_image, color_vision_type, level);
 
         Ok(ConvertedImage::new(
-            &converted_image_data,
+            converted_image.into_bytes().as_ref(),
             &color_type,
             dynamic_image.width(),
             dynamic_image.height(),
