@@ -1,3 +1,2 @@
-pub mod color;
+pub mod color_vision;
 pub mod image;
-mod vec3;
