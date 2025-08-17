@@ -47,32 +47,32 @@ while let Some(color_vision) = color_vision_iterator.next() {
 
 ### Protanomaly
 
-![protanomaly](docs/assets/protanomaly.png)
+![protanomaly](docs/assets/protanomaly-50.png)
 
 ### Protanopia
 
-![protanopia](docs/assets/protanopia.png)
+![protanopia](docs/assets/protanomaly-100.png)
 
 ### Deuteranomaly
 
-![deuteranomaly](docs/assets/deuteranomaly.png)
+![deuteranomaly](docs/assets/deuteranomaly-50.png)
 
 ### Deuteranopia
 
-![deuteranopia](docs/assets/deuteranopia.png)
+![deuteranopia](docs/assets/deuteranomaly-100.png)
 
 ### Tritanomaly
 
-![tritanomaly](docs/assets/tritanomaly.png)
+![tritanomaly](docs/assets/tritanomaly-50.png)
 
 ### Tritanopia
 
-![tritanopia](docs/assets/tritanopia.png)
+![tritanopia](docs/assets/tritanomaly-100.png)
 
 ### Achromatomaly
 
-![achromatomaly](docs/assets/achromatomaly.png)
+![achromatomaly](docs/assets/achromatomaly-50.png)
 
 ### Achromatopsia
 
-![achromatopsia](docs/assets/achromatopsia.png)
+![achromatopsia](docs/assets/achromatomaly-100.png)
