@@ -20,13 +20,9 @@ impl ColorVisionIterator {
         let next = match self.current {
             ColorVision::Trichromacy => ColorVision::Protanomaly,
             ColorVision::Protanomaly => ColorVision::Deuteranomaly,
-            ColorVision::Protanopia => ColorVision::Deuteranopia,
             ColorVision::Deuteranomaly => ColorVision::Tritanomaly,
-            ColorVision::Deuteranopia => ColorVision::Tritanopia,
             ColorVision::Tritanomaly => ColorVision::Achromatomaly,
-            ColorVision::Tritanopia => ColorVision::Achromatopsia,
-            ColorVision::Achromatomaly => ColorVision::Protanopia,
-            ColorVision::Achromatopsia => ColorVision::Trichromacy,
+            ColorVision::Achromatomaly => ColorVision::Trichromacy,
         };
 
         if next == self.start {
