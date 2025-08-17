@@ -1,4 +1,5 @@
-use crate::core::{color::color_basis::ColorBasis, vec3::Vec3};
+use super::ColorBasis;
+use crate::core::vec3::Vec3;
 
 /// transform color to specific basis
 pub fn transform_color(basis: &ColorBasis, original_rgb: &Vec3) -> Vec3 {
