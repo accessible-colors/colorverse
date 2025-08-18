@@ -2,6 +2,9 @@
 
 Color vision convertor / simluator
 
+Based on [Machado, Oliveira & Fernandes (2009)](https://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html) model.
+Customized with dynamic level parameter introduced and nonlinear easing of the level.
+
 ## Usage
 
 Configure:
