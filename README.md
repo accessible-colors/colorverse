@@ -2,6 +2,12 @@
 
 Color vision convertor / simluator
 
+[![crates.io](https://img.shields.io/crates/v/colorverse?label=latest)](https://crates.io/crates/colorverse)
+[![Documentation](https://docs.rs/colorverse/badge.svg?version=latest)](https://docs.rs/colorverse)
+[![Dependency Status](https://deps.rs/crate/colorverse/latest/status.svg)](https://deps.rs/crate/colorverse)
+[![Executable](https://github.com/nabbisen/colorverse/actions/workflows/release-executable.yaml/badge.svg)](https://github.com/nabbisen/colorverse/actions/workflows/release-executable.yaml)
+[![License](https://img.shields.io/github/license/nabbisen/colorverse)](https://github.com/nabbisen/colorverse/blob/main/LICENSE)
+
 Based on [Machado, Oliveira & Fernandes (2009)](https://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html) model.
 Customized with dynamic level parameter introduced and nonlinear easing of the level.
 
