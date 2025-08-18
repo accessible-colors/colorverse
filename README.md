@@ -84,3 +84,17 @@ while let Some(color_vision_type) = color_vision_type_iterator.next() {
 ### Achromatomaly 100% (Achromatopsia)
 
 ![achromatopsia](docs/assets/achromatomaly-100.png)
+
+
+---
+
+## Open-source, with care
+
+This project is lovingly built and maintained by volunteers.  
+We hope it helps streamline your work.  
+Please understand that the project has its own direction — while we welcome feedback, it might not fit every edge case 🌱
+
+## Acknowledgements
+
+Depends on [image](https://github.com/image-rs/image) / [nalgebra](https://github.com/dimforge/nalgebra).
+Also, on [argh](https://github.com/google/argh) on CLI I/F.

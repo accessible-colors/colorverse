@@ -1,8 +1,9 @@
-use crate::core::{
+use crate::{
     color_vision::color_vision_type::ColorVisionType,
-    image::{converted_image::ConvertedImage, source_image::SourceImage},
+    core::image::{converted_image::ConvertedImage, source_image::SourceImage},
 };
 
+pub mod color_vision;
 mod core;
 
 /// convert
@@ -17,8 +18,8 @@ pub fn convert(
 #[cfg(test)]
 mod tests {
     use crate::{
+        color_vision::color_vision_type::color_vision_type_iterator::ColorVisionTypeIterator,
         convert,
-        core::color_vision::color_vision_type::color_vision_type_iterator::ColorVisionTypeIterator,
     };
 
     use super::*;

@@ -1,6 +1,6 @@
 use image::ColorType;
 
-use crate::core::color_vision::{color_vision_type::ColorVisionType, simulate_color_vision};
+use crate::color_vision::{color_vision_type::ColorVisionType, simulate_color_vision};
 
 use super::converted_image::ConvertedImage;
 

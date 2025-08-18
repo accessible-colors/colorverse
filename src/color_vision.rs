@@ -3,7 +3,7 @@ use nalgebra::{Matrix3, Vector3};
 
 pub mod color_vision_type;
 
-use crate::core::color_vision::color_vision_type::ColorVisionType;
+use crate::color_vision::color_vision_type::ColorVisionType;
 
 /// RGB -> LMS conversion matrices (from Machado et al.)
 const RGB_TO_LMS: [[f64; 3]; 3] = [
