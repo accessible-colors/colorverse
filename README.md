@@ -13,6 +13,23 @@ Customized with dynamic level parameter introduced and nonlinear easing of the l
 
 ## Usage
 
+### Executable
+
+Executables on multiple platforms are found in [Releases](https://github.com/nabbisen/colorverse/releases/tag/latest). Just run it without any installation.
+
+```console
+$ # usage
+$ ./colorverse -c ${color vision} -l ${level} -o ${output file path} ${input file path}
+
+$ # for example
+$ ./colorverse -c protanomaly -l 0.75 -o out.png in.png
+
+$ # help
+$ ./colorverse --help
+```
+
+### Rust and `cargo`
+
 Configure:
 
 ```console
@@ -27,7 +44,7 @@ use colorverse::core::color_vision::color_vision_type::ColorVisionType;
 
 let color_vision_type = ColorVisionType::Protanomaly;
 let level = 0.5;
-let input_file_path = "input.png";
+let input_file_path = "tests/fixtures/input.png";
 let output_file_path = format!("output-{}-{}.png", color_vision, level * 100.0);
 
 convert(input_file_path, &color_vision, level)
@@ -42,7 +59,7 @@ use colorverse::core::color_vision::color_vision_type::ColorVisionType;
 let mut color_vision_type_iterator = ColorVisionTypeIterator::new(&ColorVisionType::Trichromacy);
 while let Some(color_vision_type) = color_vision_type_iterator.next() {
     for level in [0.5, 1.0] {
-        match convert("input.png", &color_vision_type, level) {
+        match convert("tests/fixtures/input.png", &color_vision_type, level) {
             Ok(x) => {
                 let output_file_path = format!("output-{}-{}.png", &color_vision_type, level * 100.0);
                 x.save_as(output_file_path.as_str());

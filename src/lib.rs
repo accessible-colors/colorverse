@@ -30,7 +30,7 @@ mod tests {
         // assert_eq!(result, 4);
 
         // let color_vision = ColorVision::Protanopia;
-        // let input_file_path = "input.png";
+        // let input_file_path = "tests/fixtures/input.png";
         // let output_file_path = format!("output-{}.png", color_vision);
 
         // convert(input_file_path, &color_vision_type, 0.5)
@@ -41,7 +41,7 @@ mod tests {
             ColorVisionTypeIterator::new(&ColorVisionType::Trichromacy);
         while let Some(color_vision) = color_vision_type_iterator.next() {
             for level in [0.5, 1.0] {
-                match convert("input.png", &color_vision, level) {
+                match convert("tests/fixtures/input.png", &color_vision, level) {
                     Ok(x) => {
                         let output_file_path =
                             format!("output-{}-{}.png", &color_vision, level * 100.0);
