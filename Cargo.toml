@@ -13,6 +13,8 @@ repository = "https://github.com/nabbisen/colorverse"
 readme = "README.md"
 rust-version = "1.87.0"
 
+exclude = ["/tests/fixtures/*"]
+
 [dependencies]
 argh = "0"
 image = { version = "^0.25", default-features = false, features = ["avif", "gif", "jpeg", "png", "tiff", "webp"] }
