@@ -19,13 +19,17 @@ Executables on multiple platforms are found in [Releases](https://github.com/nab
 
 ```console
 $ # usage
-$ ./colorverse -c ${color vision} -l ${simulation_level} -o ${output file path} ${input file path}
+$ ./colorverse simulate -c ${color vision} -l ${simulation level} -o ${output file path} ${input file path}
+$ ./colorverse daltonize -c ${color vision} -l ${simulation level} -s {daltonization strength} -o ${output file path} ${input file path}
 
 $ # for example
-$ ./colorverse -c protanomaly -l 0.75 -o out.png in.png
+$ ./colorverse simulate -c protanomaly -l 0.75 -o simulate-out.png in.png
+$ ./colorverse daltonize -c deuteranomaly -l 1.0 -s 1.0 -o daltonize-out.png in.png
 
 $ # help
 $ ./colorverse --help
+$ ./colorverse simulate --help
+$ ./colorverse daltonize --help
 ```
 
 ### Rust and `cargo`
