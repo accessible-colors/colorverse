@@ -9,11 +9,11 @@ use crate::color_vision::color_vision_type::ColorVisionType;
 use color_matrices::{LMS_TO_RGB, RGB_TO_LMS};
 
 /// simulate color vision using a continuous parametric model inspired by Machado et al.
-/// improved to apply a nonlinear threshold so that moderate levels (e.g., 0.5) have visible effects.
+/// improved to apply a nonlinear threshold so that moderate simulation_levels (e.g., 0.5) have visible effects.
 pub fn simulate_color_vision(
     img: &DynamicImage,
     color_vision_type: &ColorVisionType,
-    level: f64,
+    simulation_level: f64,
 ) -> DynamicImage {
     let (width, height) = img.dimensions();
     // todo: performance tuning: image without alpha channel should be processed with rgbimage ?
@@ -23,8 +23,8 @@ pub fn simulate_color_vision(
     let m_rgb_to_lms = Matrix3::from_row_slice(&RGB_TO_LMS.concat());
     let m_lms_to_rgb = Matrix3::from_row_slice(&LMS_TO_RGB.concat());
 
-    // nonlinear easing of level: more gradual at low level, faster at higher level
-    let t = level.clamp(0.0, 1.0).powf(1.5);
+    // nonlinear easing of simulation_level: more gradual at low simulation_level, faster at higher simulation_level
+    let t = simulation_level.clamp(0.0, 1.0).powf(1.5);
 
     for y in 0..height {
         for x in 0..width {
@@ -114,12 +114,12 @@ pub fn simulate_color_vision(
 pub fn daltonize_color_vision(
     img: &DynamicImage,
     color_vision_type: &ColorVisionType,
-    level: f64,
+    simulation_level: f64,
     strength: f64,
     preserve_luminance: bool,
 ) -> DynamicImage {
     // 1) obtain simulated image using existing function (unaltered)
-    let sim_img = simulate_color_vision(img, color_vision_type, level);
+    let sim_img = simulate_color_vision(img, color_vision_type, simulation_level);
 
     let (width, height) = img.dimensions();
     let mut output = RgbaImage::new(width, height);

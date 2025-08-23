@@ -22,7 +22,7 @@ impl SourceImage {
     pub fn simulate(
         &self,
         color_vision_type: &ColorVisionType,
-        level: f64,
+        simulation_level: f64,
     ) -> Result<ConvertedImage, String> {
         let (dynamic_image, color_type) =
             match dynamic_image_and_color_type(self.file_path.as_str()) {
@@ -30,7 +30,8 @@ impl SourceImage {
                 Err(err) => panic!("{}", err),
             };
 
-        let converted_image = simulate_color_vision(&dynamic_image, color_vision_type, level);
+        let converted_image =
+            simulate_color_vision(&dynamic_image, color_vision_type, simulation_level);
 
         Ok(ConvertedImage::new(
             converted_image.into_bytes().as_ref(),
@@ -44,7 +45,7 @@ impl SourceImage {
     pub fn daltonize(
         &self,
         color_vision_type: &ColorVisionType,
-        level: f64,
+        simulation_level: f64,
     ) -> Result<ConvertedImage, String> {
         let (dynamic_image, color_type) =
             match dynamic_image_and_color_type(self.file_path.as_str()) {
@@ -53,8 +54,13 @@ impl SourceImage {
             };
 
         // todo: strength arg
-        let converted_image =
-            daltonize_color_vision(&dynamic_image, color_vision_type, level, 1.0, true);
+        let converted_image = daltonize_color_vision(
+            &dynamic_image,
+            color_vision_type,
+            simulation_level,
+            1.0,
+            true,
+        );
 
         Ok(ConvertedImage::new(
             converted_image.into_bytes().as_ref(),

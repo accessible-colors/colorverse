@@ -10,18 +10,18 @@ mod core;
 pub fn simulate(
     file_path: &str,
     color_vision_type: &ColorVisionType,
-    level: f64,
+    simulation_level: f64,
 ) -> Result<ConvertedImage, String> {
-    SourceImage::new(file_path).simulate(color_vision_type, level)
+    SourceImage::new(file_path).simulate(color_vision_type, simulation_level)
 }
 
 /// convert for daltonization
 pub fn daltonize(
     file_path: &str,
     color_vision_type: &ColorVisionType,
-    level: f64,
+    simulation_level: f64,
 ) -> Result<ConvertedImage, String> {
-    SourceImage::new(file_path).daltonize(color_vision_type, level)
+    SourceImage::new(file_path).daltonize(color_vision_type, simulation_level)
 }
 
 #[cfg(test)]
@@ -46,19 +46,25 @@ mod tests {
         let mut color_vision_type_iterator =
             ColorVisionTypeIterator::new(&ColorVisionType::Trichromacy);
         while let Some(color_vision) = color_vision_type_iterator.next() {
-            for level in [0.5, 1.0] {
-                match simulate("tests/fixtures/input.png", &color_vision, level) {
+            for simulation_level in [0.5, 1.0] {
+                match simulate("tests/fixtures/input.png", &color_vision, simulation_level) {
                     Ok(x) => {
-                        let output_file_path =
-                            format!("simulate-{}-{}.png", &color_vision, level * 100.0);
+                        let output_file_path = format!(
+                            "simulate-{}-{}.png",
+                            &color_vision,
+                            simulation_level * 100.0
+                        );
                         x.save_as(output_file_path.as_str());
                     }
                     Err(err) => eprintln!("{}", err),
                 }
-                match daltonize("tests/fixtures/input.png", &color_vision, level) {
+                match daltonize("tests/fixtures/input.png", &color_vision, simulation_level) {
                     Ok(x) => {
-                        let output_file_path =
-                            format!("daltonize-{}-{}.png", &color_vision, level * 100.0);
+                        let output_file_path = format!(
+                            "daltonize-{}-{}.png",
+                            &color_vision,
+                            simulation_level * 100.0
+                        );
                         x.save_as(output_file_path.as_str());
                     }
                     Err(err) => eprintln!("{}", err),
