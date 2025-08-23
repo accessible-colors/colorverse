@@ -1,6 +1,6 @@
 use image::{ColorType, DynamicImage};
 
-use crate::color_vision::{
+use crate::core::color_vision::{
     color_vision_type::ColorVisionType, daltonize_color_vision, simulate_color_vision,
 };
 

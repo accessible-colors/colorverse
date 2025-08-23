@@ -1,5 +1,5 @@
 use argh::FromArgs;
-use colorverse::color_vision::color_vision_type::ColorVisionType;
+use colorverse::ColorVisionTypeForCli;
 
 use crate::cli::args::mode::Mode;
 
@@ -22,7 +22,7 @@ pub struct Args {
 
     /// color vision simulation level
     #[argh(option, short = 'c')]
-    pub color_vision: ColorVisionType,
+    pub color_vision: ColorVisionTypeForCli,
 
     /// color vision simulation level
     #[argh(option, short = 'l', default = "1.0")]

@@ -1,6 +1,6 @@
 use std::{fmt, str::FromStr};
 
-use crate::color_vision::color_vision_type::color_vision_type_iterator::ColorVisionTypeIterator;
+use super::color_vision_type::color_vision_type_iterator::ColorVisionTypeIterator;
 
 pub mod color_vision_type_iterator;
 

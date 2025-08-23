@@ -5,7 +5,7 @@ mod color_matrices;
 mod color_utils;
 pub mod color_vision_type;
 
-use crate::color_vision::color_vision_type::ColorVisionType;
+use super::color_vision::color_vision_type::ColorVisionType;
 use color_matrices::{LMS_TO_RGB, RGB_TO_LMS};
 
 /// simulate color vision using a continuous parametric model inspired by Machado et al.

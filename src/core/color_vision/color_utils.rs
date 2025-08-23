@@ -35,7 +35,7 @@ pub fn lms_to_rgb_matrix() -> Matrix3<f64> {
 mod test {
     use nalgebra::Vector3;
 
-    use crate::color_vision::color_utils::{lms_to_rgb_matrix, rgb_to_lms_matrix};
+    use crate::core::color_vision::color_utils::{lms_to_rgb_matrix, rgb_to_lms_matrix};
 
     /// convert linear RGB Vector3 (r,g,b) into LMS
     pub fn rgb_linear_to_lms(rgb: Vector3<f64>) -> Vector3<f64> {

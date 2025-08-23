@@ -1,9 +1,7 @@
-use cli::args::Args;
+pub mod cli;
+
+use cli::args::{Args, mode::Mode};
 use colorverse::{daltonize, simulate};
-
-use crate::cli::args::mode::Mode;
-
-mod cli;
 
 fn main() {
     let args: Args = argh::from_env();

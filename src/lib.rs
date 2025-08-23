@@ -1,10 +1,11 @@
 use crate::{
-    color_vision::color_vision_type::ColorVisionType,
+    core::color_vision::color_vision_type::ColorVisionType,
     core::image::{converted_image::ConvertedImage, source_image::SourceImage},
 };
 
-pub mod color_vision;
 mod core;
+
+pub use core::color_vision::color_vision_type::ColorVisionType as ColorVisionTypeForCli;
 
 /// convert for simulation
 pub fn simulate(
@@ -33,7 +34,7 @@ pub fn daltonize(
 
 #[cfg(test)]
 mod tests {
-    use crate::color_vision::color_vision_type::color_vision_type_iterator::ColorVisionTypeIterator;
+    use crate::core::color_vision::color_vision_type::color_vision_type_iterator::ColorVisionTypeIterator;
 
     use super::*;
 
@@ -65,26 +66,24 @@ mod tests {
                     }
                     Err(err) => eprintln!("{}", err),
                 }
-                if simulation_level == 1.0 {
-                    for daltonization_strength in [0.5, 1.0] {
-                        match daltonize(
-                            "tests/fixtures/input.png",
-                            &color_vision,
-                            simulation_level,
-                            daltonization_strength,
-                            true,
-                        ) {
-                            Ok(x) => {
-                                let output_file_path = format!(
-                                    "target/daltonize-{}-{}-{}.png",
-                                    &color_vision,
-                                    simulation_level * 100.0,
-                                    daltonization_strength * 100.0,
-                                );
-                                x.save_as(output_file_path.as_str());
-                            }
-                            Err(err) => eprintln!("{}", err),
+                for daltonization_strength in [0.5, 1.0] {
+                    match daltonize(
+                        "tests/fixtures/input.png",
+                        &color_vision,
+                        simulation_level,
+                        daltonization_strength,
+                        true,
+                    ) {
+                        Ok(x) => {
+                            let output_file_path = format!(
+                                "target/daltonize-{}-{}-{}.png",
+                                &color_vision,
+                                simulation_level * 100.0,
+                                daltonization_strength * 100.0,
+                            );
+                            x.save_as(output_file_path.as_str());
                         }
+                        Err(err) => eprintln!("{}", err),
                     }
                 }
             }
