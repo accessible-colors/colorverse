@@ -15,7 +15,7 @@ Customized with dynamic simulation level parameter introduced and nonlinear easi
 
 ### Executable
 
-Executables on multiple platforms are found in [Releases](https://github.com/nabbisen/colorverse/releases/tag/latest). Just run it without any installation.
+Executables on multiple platforms are found in [Releases](https://github.com/nabbisen/colorverse/releases/latest). Just run it without any installation.
 
 ```console
 $ # usage

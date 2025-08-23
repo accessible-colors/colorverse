@@ -1,6 +1,6 @@
 [package]
 name = "colorverse"
-version = "0.6.1"
+version = "0.6.2"
 edition = "2024"
 
 description = "Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色補完)"
