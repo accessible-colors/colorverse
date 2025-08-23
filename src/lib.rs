@@ -50,7 +50,7 @@ mod tests {
                 match simulate("tests/fixtures/input.png", &color_vision, simulation_level) {
                     Ok(x) => {
                         let output_file_path = format!(
-                            "simulate-{}-{}.png",
+                            "target/simulate-{}-{}.png",
                             &color_vision,
                             simulation_level * 100.0
                         );
@@ -61,7 +61,7 @@ mod tests {
                 match daltonize("tests/fixtures/input.png", &color_vision, simulation_level) {
                     Ok(x) => {
                         let output_file_path = format!(
-                            "daltonize-{}-{}.png",
+                            "target/daltonize-{}-{}.png",
                             &color_vision,
                             simulation_level * 100.0
                         );
