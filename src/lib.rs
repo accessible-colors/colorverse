@@ -20,8 +20,15 @@ pub fn daltonize(
     file_path: &str,
     color_vision_type: &ColorVisionType,
     simulation_level: f64,
+    daltonization_strength: f64,
+    preserve_luminance: bool,
 ) -> Result<ConvertedImage, String> {
-    SourceImage::new(file_path).daltonize(color_vision_type, simulation_level)
+    SourceImage::new(file_path).daltonize(
+        color_vision_type,
+        simulation_level,
+        daltonization_strength,
+        preserve_luminance,
+    )
 }
 
 #[cfg(test)]
@@ -58,16 +65,27 @@ mod tests {
                     }
                     Err(err) => eprintln!("{}", err),
                 }
-                match daltonize("tests/fixtures/input.png", &color_vision, simulation_level) {
-                    Ok(x) => {
-                        let output_file_path = format!(
-                            "target/daltonize-{}-{}.png",
+                if simulation_level == 1.0 {
+                    for daltonization_strength in [0.5, 1.0] {
+                        match daltonize(
+                            "tests/fixtures/input.png",
                             &color_vision,
-                            simulation_level * 100.0
-                        );
-                        x.save_as(output_file_path.as_str());
+                            simulation_level,
+                            daltonization_strength,
+                            true,
+                        ) {
+                            Ok(x) => {
+                                let output_file_path = format!(
+                                    "target/daltonize-{}-{}-{}.png",
+                                    &color_vision,
+                                    simulation_level * 100.0,
+                                    daltonization_strength * 100.0,
+                                );
+                                x.save_as(output_file_path.as_str());
+                            }
+                            Err(err) => eprintln!("{}", err),
+                        }
                     }
-                    Err(err) => eprintln!("{}", err),
                 }
             }
         }

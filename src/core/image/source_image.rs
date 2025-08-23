@@ -46,6 +46,8 @@ impl SourceImage {
         &self,
         color_vision_type: &ColorVisionType,
         simulation_level: f64,
+        daltonization_strength: f64,
+        preserve_luminance: bool,
     ) -> Result<ConvertedImage, String> {
         let (dynamic_image, color_type) =
             match dynamic_image_and_color_type(self.file_path.as_str()) {
@@ -58,8 +60,8 @@ impl SourceImage {
             &dynamic_image,
             color_vision_type,
             simulation_level,
-            1.0,
-            true,
+            daltonization_strength,
+            preserve_luminance,
         );
 
         Ok(ConvertedImage::new(

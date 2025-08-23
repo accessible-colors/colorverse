@@ -1,33 +1,35 @@
-use argh::FromArgs;
-use colorverse::{color_vision::color_vision_type::ColorVisionType, simulate};
+use cli::args::Args;
+use colorverse::{daltonize, simulate};
 
-#[derive(FromArgs)]
-#[argh(description = "args")]
-struct Args {
-    /// input file path
-    #[argh(positional)]
-    file_path: String,
+use crate::cli::args::mode::Mode;
 
-    /// color vision simulation level
-    #[argh(option, short = 'c')]
-    color_vision: ColorVisionType,
+mod cli;
 
-    /// color vision simulation level
-    #[argh(option, short = 'l', default = "1.0")]
-    simulation_level: f64,
-
-    /// output file path
-    #[argh(option, short = 'o')]
-    output_file: String,
-}
 fn main() {
     let args: Args = argh::from_env();
-    // todo: simulate and daltonize
-    if let Ok(converted_image) = simulate(
-        args.file_path.as_str(),
-        &args.color_vision,
-        args.simulation_level,
-    ) {
+
+    let converted_image = match args.mode {
+        Mode::Simulate => {
+            println!("simluation starts");
+            simulate(
+                args.file_path.as_str(),
+                &args.color_vision,
+                args.simulation_level,
+            )
+        }
+        Mode::Daltonize => {
+            println!("daltonization starts");
+            daltonize(
+                args.file_path.as_str(),
+                &args.color_vision,
+                args.simulation_level,
+                args.daltonization_strength,
+                !args.no_preserve_luminance,
+            )
+        }
+    };
+
+    if let Ok(converted_image) = converted_image {
         converted_image.save_as(args.output_file.as_str());
     } else {
         eprint!("failed to convert")

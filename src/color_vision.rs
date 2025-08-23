@@ -115,7 +115,7 @@ pub fn daltonize_color_vision(
     img: &DynamicImage,
     color_vision_type: &ColorVisionType,
     simulation_level: f64,
-    strength: f64,
+    daltonization_strength: f64,
     preserve_luminance: bool,
 ) -> DynamicImage {
     // 1) obtain simulated image using existing function (unaltered)
@@ -187,8 +187,8 @@ pub fn daltonize_color_vision(
                 _ => {}
             }
 
-            // apply strength scaling
-            add *= strength.clamp(0.0, 1.0);
+            // apply daltonization strength scaling
+            add *= daltonization_strength.clamp(0.0, 1.0);
 
             // corrected LMS = sim_lms + add
             let corrected_lms = sim_lms + add;
