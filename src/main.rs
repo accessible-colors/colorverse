@@ -1,5 +1,5 @@
 use argh::FromArgs;
-use colorverse::{color_vision::color_vision_type::ColorVisionType, convert};
+use colorverse::{color_vision::color_vision_type::ColorVisionType, simulate};
 
 #[derive(FromArgs)]
 #[argh(description = "args")]
@@ -22,7 +22,8 @@ struct Args {
 }
 fn main() {
     let args: Args = argh::from_env();
-    if let Ok(converted_image) = convert(args.file_path.as_str(), &args.color_vision, args.level) {
+    // todo: simulate and daltonize
+    if let Ok(converted_image) = simulate(args.file_path.as_str(), &args.color_vision, args.level) {
         converted_image.save_as(args.output_file.as_str());
     } else {
         eprint!("failed to convert")

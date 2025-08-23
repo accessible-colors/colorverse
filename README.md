@@ -1,6 +1,6 @@
 # Colorverse
 
-Color vision convertor / simluator
+Color vision convertor: not only simulator but also daltonizer
 
 [![crates.io](https://img.shields.io/crates/v/colorverse?label=latest)](https://crates.io/crates/colorverse)
 [![Documentation](https://docs.rs/colorverse/badge.svg?version=latest)](https://docs.rs/colorverse)
