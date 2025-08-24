@@ -1,15 +1,15 @@
 [package]
 name = "colorverse"
-version = "0.6.2"
+version = "0.6.3"
 edition = "2024"
 
-description = "Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色補完)"
+description = "Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色の補正)"
 authors = ["nabbisen <nabbisen@scqr.net>"]
 license = "Apache-2.0"
 
 categories = ["graphics", "accessibility", "computer-vision", "rendering", "command-line-utilities"]
 keywords = ["color", "vector", "graphics", "image", "simulation"]
-repository = "https://github.com/nabbisen/colorverse"
+repository = "https://github.com/accessible-colors/colorverse"
 readme = "README.md"
 rust-version = "1.87.0"
 

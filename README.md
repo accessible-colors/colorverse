@@ -5,8 +5,8 @@ Color vision diversity (色覚多様性) convertor - not only simulate but also 
 [![crates.io](https://img.shields.io/crates/v/colorverse?label=latest)](https://crates.io/crates/colorverse)
 [![Documentation](https://docs.rs/colorverse/badge.svg?version=latest)](https://docs.rs/colorverse)
 [![Dependency Status](https://deps.rs/crate/colorverse/latest/status.svg)](https://deps.rs/crate/colorverse)
-[![Executable](https://github.com/nabbisen/colorverse/actions/workflows/release-executable.yaml/badge.svg)](https://github.com/nabbisen/colorverse/actions/workflows/release-executable.yaml)
-[![License](https://img.shields.io/github/license/nabbisen/colorverse)](https://github.com/nabbisen/colorverse/blob/main/LICENSE)
+[![Executable](https://github.com/accessible-colors/colorverse/actions/workflows/release-executable.yaml/badge.svg)](https://github.com/accessible-colors/colorverse/actions/workflows/release-executable.yaml)
+[![License](https://img.shields.io/github/license/accessible-colors/colorverse)](https://github.com/accessible-colors/colorverse/blob/main/LICENSE)
 
 Based on [Machado, Oliveira & Fernandes (2009)](https://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html) model.
 Customized with dynamic simulation level parameter introduced and nonlinear easing of the level.
@@ -15,7 +15,7 @@ Customized with dynamic simulation level parameter introduced and nonlinear easi
 
 ### Executable
 
-Executables on multiple platforms are found in [Releases](https://github.com/nabbisen/colorverse/releases/latest). Just run it without any installation.
+Executables on multiple platforms are found in [Releases](https://github.com/accessible-colors/colorverse/releases/latest). Just run it without any installation.
 
 ```console
 $ # usage
