@@ -42,71 +42,71 @@ See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ### Trichromacy
 
-![trichromacy](docs/assets/trichromacy.png)
+![trichromacy](docs/assets/samples/trichromacy.png)
 
 ### Protanomaly
 
 #### Simulation 50%
 
-![protanomaly](docs/assets/protanomaly-50.png)
+![protanomaly](docs/assets/samples/protanomaly-50.png)
 
 #### Simulation 100% (Protanopia)
 
-![protanopia](docs/assets/protanomaly-100.png)
+![protanopia](docs/assets/samples/protanomaly-100.png)
 
 #### Simulation 100% + Daltonization 50%
 
-![protanomaly 100% - daltonization 50%](docs/assets/protanomaly-100-daltonize-50.png)
+![protanomaly 100% - daltonization 50%](docs/assets/samples/protanomaly-100-daltonize-50.png)
 
 #### Simulation 100% + Daltonization 100%
 
-![protanomaly 100% - daltonization 100%](docs/assets/protanomaly-100-daltonize-100.png)
+![protanomaly 100% - daltonization 100%](docs/assets/samples/protanomaly-100-daltonize-100.png)
 
 ### Deuteranomaly
 
 #### Simulation 50%
 
-![deuteranomaly](docs/assets/deuteranomaly-50.png)
+![deuteranomaly](docs/assets/samples/deuteranomaly-50.png)
 
 ### Simulation 100% (Deuteranopia)
 
-![deuteranopia](docs/assets/deuteranomaly-100.png)
+![deuteranopia](docs/assets/samples/deuteranomaly-100.png)
 
 #### Simulation 100% + Daltonization 50%
 
-![deuteranomaly 100% - daltonization 50%](docs/assets/deuteranomaly-100-daltonize-50.png)
+![deuteranomaly 100% - daltonization 50%](docs/assets/samples/deuteranomaly-100-daltonize-50.png)
 
 #### Simulation 100% + Daltonization 100%
 
-![deuteranomaly 100% - daltonization 100%](docs/assets/deuteranomaly-100-daltonize-100.png)
+![deuteranomaly 100% - daltonization 100%](docs/assets/samples/deuteranomaly-100-daltonize-100.png)
 
 ### Tritanomaly
 
 #### Simulation 50%
 
-![tritanomaly](docs/assets/tritanomaly-50.png)
+![tritanomaly](docs/assets/samples/tritanomaly-50.png)
 
 ### Simulation 100% (Tritanopia)
 
-![tritanopia](docs/assets/tritanomaly-100.png)
+![tritanopia](docs/assets/samples/tritanomaly-100.png)
 
 #### Simulation 100% + Daltonization 50%
 
-![tritanomaly 100% - daltonization 50%](docs/assets/tritanomaly-100-daltonize-50.png)
+![tritanomaly 100% - daltonization 50%](docs/assets/samples/tritanomaly-100-daltonize-50.png)
 
 #### Simulation 100% + Daltonization 100%
 
-![tritanomaly 100% - daltonization 100%](docs/assets/tritanomaly-100-daltonize-100.png)
+![tritanomaly 100% - daltonization 100%](docs/assets/samples/tritanomaly-100-daltonize-100.png)
 
 ### Achromatomaly
 
 #### Simulation 50%
 
-![achromatomaly](docs/assets/achromatomaly-50.png)
+![achromatomaly](docs/assets/samples/achromatomaly-50.png)
 
 ### Simulation 100% (Achromatopsia)
 
-![achromatopsia](docs/assets/achromatomaly-100.png)
+![achromatopsia](docs/assets/samples/achromatomaly-100.png)
 
 
 ---
