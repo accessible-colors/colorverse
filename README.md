@@ -1,6 +1,6 @@
 # Colorverse
 
-Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色補完)
+Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色の補正)
 
 [![crates.io](https://img.shields.io/crates/v/colorverse?label=latest)](https://crates.io/crates/colorverse)
 [![Documentation](https://docs.rs/colorverse/badge.svg?version=latest)](https://docs.rs/colorverse)
