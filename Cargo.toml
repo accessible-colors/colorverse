@@ -1,6 +1,6 @@
 [package]
 name = "colorverse"
-version = "0.6.4"
+version = "0.6.5"
 edition = "2024"
 
 description = "Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色の補正)"
@@ -13,7 +13,10 @@ repository = "https://github.com/accessible-colors/colorverse"
 readme = "README.md"
 rust-version = "1.87.0"
 
-exclude = ["/tests/fixtures/*"]
+exclude = [
+    "/tests/fixtures/*",
+    "/docs/assets/*",
+]
 
 [dependencies]
 argh = "0"
