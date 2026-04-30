@@ -4,7 +4,7 @@ version = "0.6.6"
 edition = "2024"
 
 description = "Color vision diversity (色覚多様性) convertor - not only simulate but also daltonize (色の補正)"
-authors = ["nabbisen <nabbisen@scqr.net>"]
+authors = ["nabbisen"]
 license = "Apache-2.0"
 
 categories = ["graphics", "accessibility", "computer-vision", "rendering", "command-line-utilities"]
